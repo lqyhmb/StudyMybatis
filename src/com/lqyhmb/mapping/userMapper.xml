@@ -15,4 +15,24 @@
 		select id,name,age from user where id = #{id}
 	</select>
 	
+	<!-- 创建用户（Create） -->
+	<insert id="addUser" parameterType="com.lqyhmb.model.User">
+		insert into user(name,age) values(#{name},#{age})
+	</insert>
+	
+	<!-- 删除用户（Remove） -->
+	<delete id="deleteUser" parameterType="int">
+		delete from user where id=#{id}
+	</delete>
+	
+	<!-- 修改用户（Update） -->
+	<update id="updateUser" parameterType="com.lqyhmb.model.User">
+		update user set name=#{name},age=#{age} where id=#{id}
+	</update>
+	
+	<!-- 查询全部用户 -->
+	<select id="getAllUser" resultType="com.lqyhmb.model.User">
+		select id,name,age from user
+	</select>
+	
 </mapper>
