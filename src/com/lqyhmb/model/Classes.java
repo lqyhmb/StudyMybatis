@@ -1,5 +1,7 @@
 package com.lqyhmb.model;
 
+import java.util.List;
+
 /**
  * 定义class表对应的实体类
  */
@@ -13,6 +15,9 @@ public class Classes {
 	 * 用于维护teacher和class之间的一对一关系，通过这个teacher属性就可以知道这个班级是由哪个老师负责的
 	 */
 	private Teacher teacher;
+
+	// 用一个List<Student>集合属性表示班级拥有的学生
+	private List<Student> students;
 
 	public int getId() {
 		return id;
@@ -38,9 +43,17 @@ public class Classes {
 		this.teacher = teacher;
 	}
 
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
 	@Override
 	public String toString() {
-		return "Classes [id=" + id + ", name=" + name + ", teacher=" + teacher + "]";
+		return "Classes [id=" + id + ", name=" + name + ", teacher=" + teacher + ", students=" + students + "]";
 	}
 
 }
